@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = -I ./ -I Libft
+INCLUDES = -I ./include -I Libft
 NAME = push_swap
 HEADER = push_swap.h
 LIBFT = Libft
