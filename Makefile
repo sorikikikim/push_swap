@@ -1,11 +1,11 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = -I ./include -I Libft
+INCLUDES = -I ./ -I Libft
 NAME = push_swap
 HEADER = push_swap.h
 LIBFT = Libft
 LIBFT_LIB = libft.a
-SRCS = error/error.c main.c
+SRCS = error/error.c utils/utils.c main.c
 OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)

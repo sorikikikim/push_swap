@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int		check_valid_num(char *element)
+int			check_valid_num(char *element)
 {
 	int i;
 	int flag;
@@ -18,7 +18,7 @@ int		check_valid_num(char *element)
 	return (1);
 }
 
-int	check_valid_digit(char *element)
+int			check_valid_digit(char *element)
 {
 	int digit;
 	int i;
@@ -38,7 +38,18 @@ int	check_valid_digit(char *element)
 	return (digit);
 }
 
-int		print_error()
+long long	check_num_range(char *element)
+{
+	long long num;
+
+	num = ft_atoi_ll(element);
+	if ((num < (long long)-2147483648) || (num > (long long)2147483647))
+		return (3000000000);
+	else
+		return (num);
+}
+
+int			print_error()
 {
 	ft_putstr_fd("Error\n", 1);
 	return (0);

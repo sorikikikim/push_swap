@@ -1,14 +1,19 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include "./Libft/libft.h"
+#include "push_swap.h"
 
-
-//#include "push_swap.h"
-
-
-
-void	check_many_arg(char *argv)
+static int	check_many_arg(int argc, char **argv)
 {
+	int i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if ((!check_valid_num(argv[i])) || (check_valid_digit(argv[i]) > 10))
+			return (print_error());
+		if (check_num_range(argv[i]) == 3000000000)
+			return (print_error());
+		i++;
+	}
+	return (1);
 }
 
 
@@ -25,6 +30,8 @@ static int	check_one_arg(char *argv)
 	{
 		if ((!check_valid_num(element[i])) || (check_valid_digit(element[i]) > 10))
 			return (print_error());
+		if (check_num_range(element[i]) == 3000000000)
+			return (print_error());
 		i++;
 	}
 	return (1);
@@ -39,8 +46,6 @@ int			main(int argc, char *argv[])
 		return (print_error());
 	if (argc == 2)
 		check_one_arg(argv[1]);
-	//if (argc > 2)
-	//	while (++i < argc)
-	//		check_many_arg(argv[i]);
-
+	if (argc > 2)
+		check_many_arg(argc, argv);
 }
