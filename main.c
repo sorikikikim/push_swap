@@ -16,7 +16,6 @@ static int	check_many_arg(int argc, char **argv)
 	return (1);
 }
 
-
 static int	check_one_arg(char *argv)
 {
 	char	**element;
