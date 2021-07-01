@@ -35,6 +35,4 @@ int			main(int argc, char *argv[])
 	}
 	if (argc > 2)
 		check_arg(argc - 1, argv + 1, &temp_stack);
-
-
 }
