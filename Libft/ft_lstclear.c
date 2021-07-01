@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sorkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: sorkim <sorkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/01 18:10:13 by sorkim            #+#    #+#             */
-/*   Updated: 2021/01/03 17:26:34 by sorkim           ###   ########.fr       */
+/*   Updated: 2021/07/01 18:56:22 by sorkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (lst)
 	{

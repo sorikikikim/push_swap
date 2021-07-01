@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sorkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: sorkim <sorkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 02:42:10 by sorkim            #+#    #+#             */
-/*   Updated: 2020/12/30 15:24:43 by sorkim           ###   ########.fr       */
+/*   Updated: 2021/07/01 19:01:24 by sorkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t s_len;
+	size_t	i;
+	size_t	s_len;
 
 	i = 0;
 	s_len = ft_strlen(src);

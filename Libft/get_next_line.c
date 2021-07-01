@@ -6,7 +6,7 @@
 /*   By: sorkim <sorkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 15:03:55 by sorkim            #+#    #+#             */
-/*   Updated: 2021/06/07 22:56:19 by sorkim           ###   ########.fr       */
+/*   Updated: 2021/07/01 19:04:23 by sorkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static int	return_all(char **backup, char **line, int read_size)
 	return (0);
 }
 
-int			get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char		*backup[OPEN_MAX];
 	char			buf[BUFFER_SIZE + 1];

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sorkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: sorkim <sorkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 17:37:28 by sorkim            #+#    #+#             */
-/*   Updated: 2021/01/03 17:14:27 by sorkim           ###   ########.fr       */
+/*   Updated: 2021/07/01 18:53:50 by sorkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	num_len(int n)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
 	if (n == 0)
@@ -29,7 +29,7 @@ static size_t	num_len(int n)
 	return (len);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	size_t	size;
 	size_t	flag;
@@ -39,7 +39,8 @@ char			*ft_itoa(int n)
 	size = num_len(n);
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	if (!(result = (char *)malloc(sizeof(char) * size + 1)))
+	result = (char *)malloc(sizeof(char) * size + 1);
+	if (!result)
 		return (0);
 	result[size] = 0;
 	if (n < 0)

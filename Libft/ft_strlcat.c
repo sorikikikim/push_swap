@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sorkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: sorkim <sorkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 02:41:48 by sorkim            #+#    #+#             */
-/*   Updated: 2020/12/28 02:41:53 by sorkim           ###   ########.fr       */
+/*   Updated: 2021/07/01 19:01:14 by sorkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t dst_len;
-	size_t src_len;
+	size_t	i;
+	size_t	dst_len;
+	size_t	src_len;
 
 	i = 0;
 	dst_len = ft_strlen(dst);

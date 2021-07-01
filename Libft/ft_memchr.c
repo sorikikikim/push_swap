@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sorkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: sorkim <sorkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 02:36:18 by sorkim            #+#    #+#             */
-/*   Updated: 2020/12/30 00:03:28 by sorkim           ###   ########.fr       */
+/*   Updated: 2021/07/01 18:59:34 by sorkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	search;
 	size_t			i;
 
-	str = (unsigned char*)s;
+	str = (unsigned char *)s;
 	search = (unsigned char)c;
 	i = 0;
 	while (i < n)
