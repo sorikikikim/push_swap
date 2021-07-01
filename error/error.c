@@ -49,8 +49,8 @@ long long	check_num_range(char *element)
 		return (num);
 }
 
-int			print_error()
+void			print_error()
 {
 	ft_putstr_fd("Error\n", 1);
-	return (0);
+	exit(1);
 }

@@ -20,7 +20,7 @@ typedef struct		s_stack
 }					t_stack;
 
 int			main(int argc, char *argv[]);
-int			print_error();
+void		print_error();
 int			check_valid_digit(char *element);
 int			check_valid_num(char *element);
 long long	check_num_range(char *element);
