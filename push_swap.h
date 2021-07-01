@@ -5,18 +5,19 @@
 # include <unistd.h>
 #include "libft.h"
 
-//typedef struct	s_node
-//{
-//	int data;
-//	struct s_node *prev;
-//	struct s_node *next;
-//}				t_node;
-//
-//typedef struct	s_linked_list
-//{
-//	t_node *head;
-//	int		size;
-//}				t_linked_list;
+typedef struct		s_node
+{
+	int 			value;
+	struct s_node	*prev;
+	struct s_node 	*next;
+}					t_node;
+
+typedef struct		s_stack
+{
+	int				size;
+	t_node			*head;
+}					t_stack;
+
 int			main(int argc, char *argv[]);
 int			print_error();
 int			check_valid_digit(char *element);

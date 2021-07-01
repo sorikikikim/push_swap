@@ -32,6 +32,7 @@ static int	check_one_arg(char *argv)
 		if (check_num_range(element[i]) == 3000000000)
 			return (print_error());
 		i++;
+		if 
 	}
 	return (1);
 }
