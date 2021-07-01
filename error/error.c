@@ -38,6 +38,19 @@ int			check_valid_digit(char *element)
 	return (digit);
 }
 
+//int	check_duplication(char *element)
+//{
+//	int i;
+//	
+//	i = 1;
+//	while (element[i])
+//	{
+//		if (element[i - 1] == element[i])
+//			print_error();
+//		
+//	}
+//}
+//
 long long	check_num_range(char *element)
 {
 	long long num;

@@ -5,7 +5,7 @@ NAME = push_swap
 HEADER = push_swap.h
 LIBFT = Libft
 LIBFT_LIB = libft.a
-SRCS = error/error.c utils/utils.c main.c
+SRCS = error/error.c utils/utils.c linked_list/set_stack.c main.c
 OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)

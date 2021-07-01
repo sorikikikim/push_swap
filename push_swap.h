@@ -27,4 +27,8 @@ long long	check_num_range(char *element);
 long long	ft_atoi_ll(const char *str);
 int			count_element(char **element);
 
+t_node	*create_node(int data);
+void	append_node(t_stack *stack, t_node *new_node);
+t_stack *put_element(t_stack *stack, int size, int *temp);
+t_stack	*init_stack(void);
 #endif
