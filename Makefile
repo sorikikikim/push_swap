@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 INCLUDES = -I ./ -I Libft
 NAME = push_swap
 HEADER = push_swap.h

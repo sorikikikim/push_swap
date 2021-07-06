@@ -28,6 +28,7 @@ long long	ft_atoi_ll(const char *str);
 int			count_element(char **element);
 
 t_node	*create_node(int data);
+void	delete_node(t_node *head, t_node *delete);
 void	append_node(t_stack *stack, t_node *new_node);
 t_stack *put_element(t_stack *stack, int size, int *temp);
 t_stack	*init_stack(void);

@@ -25,6 +25,29 @@ t_node	*create_node(int data)
 	return (new_node);
 }
 
+void	delete_node(t_node *head, t_node *delete)
+{
+	t_node *temp;
+
+	if (head == delete)
+	{
+		head = delete->next;
+		if (head != NULL)
+			head->prev = NULL;
+		delete->prev = NULL;
+		delete->next = NULL;
+	}
+	else
+	{
+		temp = delete;
+		delete->prev->next = temp->next;
+		if (delete->next != NULL)
+			delete->next->prev = temp->prev;
+		delete->prev = NULL;
+		delete->next = NULL;
+	}
+}
+
 void	append_node(t_stack *stack, t_node *new_node)
 {
 	t_node	*tail;
@@ -47,7 +70,6 @@ void	append_node(t_stack *stack, t_node *new_node)
 	}
 }
 
-
 t_stack *put_element(t_stack *stack, int size, int *temp)
 {
 	t_node *new_node;
@@ -57,77 +79,10 @@ t_stack *put_element(t_stack *stack, int size, int *temp)
 	while (i < size)
 	{
 		new_node = create_node(temp[i]);
+		if (!new_node)
+			print_error();
 		append_node(stack, new_node);
 		i++;
 	}
-	//printf("%d\n", stack[1]);
-	//printf("%d\n", stack[2]);
-	//printf("%d\n", stack[3]);
 	return (stack);
 }
-
-
-
-/*
-
-static void		connect_list(t_node **temp, t_node **node, t_stack **stack)
-{
-	if (!*node)
-	{
-		*node = *temp;
-		(*stack)->top = *node;
-	}
-	else
-	{
-		(*node)->next = *temp;
-		(*temp)->prev = *node;
-		*node = (*node)->next;
-	}
-}
-
-static int		set_node(char *argv, t_node **node, t_stack **stack)
-{
-	int		i;
-	char	**arg;
-	t_node	*temp;
-
-	arg = ft_split(argv, ' ');
-	if (!arg)
-		return (0);
-	i = -1;
-	while (arg[++i])
-	{
-		temp = init_node();
-		if (!temp)
-			print_error();
-		temp->value = ft_atoi(arg[i]);
-		connect_list(&temp, node, stack);
-		(*stack)->size++;
-		free(arg[i]);
-	}
-	free(arg);
-	return (1);
-}
-
-t_node			*put_element(t_stack **stack, int size, int **temp_stack)
-{
-	int		i;
-	int		ret;
-	t_node	*node;
-
-	i = 0;
-	node = NULL;
-	while (++i < argc)
-	{
-		ret = set_node(argv[i], &node, stack);
-		if (!ret)
-			print_error();
-	}
-	if (!node->next)
-		(*stack)->bottom = node;
-	while (node->prev)
-		node = node->prev;
-	return (node);
-}
-
-*/

@@ -37,13 +37,18 @@ int	main(int argc, char *argv[])
 		temp = ft_split(argv[1], ' ');
 		check_arg(count_element(temp), temp, &temp_stack);
 		put_element(a, count_element(temp), temp_stack);
-		
+
+		printf("head : %d\n", a->head->value);
+		printf("tail : %d\n", a->head->prev->value);
 
 	}
 	if (argc > 2)
 	{
 		check_arg(argc - 1, argv + 1, &temp_stack);	
 		put_element(a, argc - 1, temp_stack);
+
+		printf("head : %d\n", a->head->value);
+		printf("tail : %d\n", a->head->prev->value);
 	
 		
 
