@@ -8,7 +8,7 @@ t_stack	*init_stack(void)
 	if (!stack)
 		return (NULL);
 	stack->size = 0;
-	stack->head = NULL;
+	stack->top = NULL;
 	return (stack);
 }
 
@@ -25,48 +25,46 @@ t_node	*create_node(int data)
 	return (new_node);
 }
 
-void	delete_node(t_node *head, t_node *delete)
+void	pop_node(t_stack *stack)
 {
 	t_node *temp;
-
-	if (head == delete)
+	if (stack->size == 0)
+		print_error();
+	else if (stack->size == 1)
 	{
-		head = delete->next;
-		if (head != NULL)
-			head->prev = NULL;
-		delete->prev = NULL;
-		delete->next = NULL;
+		free(stack->top);
+		stack->size--;
+		stack->top = NULL;
 	}
 	else
 	{
-		temp = delete;
-		delete->prev->next = temp->next;
-		if (delete->next != NULL)
-			delete->next->prev = temp->prev;
-		delete->prev = NULL;
-		delete->next = NULL;
+		temp = stack->top->prev;
+		stack->top = stack->top->next;
+		free(stack->top->prev);
+		stack->top->prev = temp;
+		temp->next = stack->top;
 	}
 }
 
 void	append_node(t_stack *stack, t_node *new_node)
 {
-	t_node	*tail;
+	t_node	*bottom;
 
-	if ((stack->head) == NULL)
+	if ((stack->top) == NULL)
 	{
 		stack->size = 1;
-		stack->head = new_node;
+		stack->top = new_node;
 		(new_node)->prev = new_node;
 		(new_node)->next = new_node;
 	}
 	else
 	{
 		stack->size++;
-		tail = stack->head->prev;
-		new_node->next = stack->head;
-		new_node->prev = tail;
-		tail->next = new_node;
-		stack->head->prev = new_node;
+		bottom = stack->top->prev;
+		new_node->next = stack->top;
+		new_node->prev = bottom;
+		bottom->next = new_node;
+		stack->top->prev = new_node;
 	}
 }
 

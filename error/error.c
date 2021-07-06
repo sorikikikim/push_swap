@@ -38,19 +38,6 @@ int			check_valid_digit(char *element)
 	return (digit);
 }
 
-//int	check_duplication(char *element)
-//{
-//	int i;
-//	
-//	i = 1;
-//	while (element[i])
-//	{
-//		if (element[i - 1] == element[i])
-//			print_error();
-//		
-//	}
-//}
-//
 long long	check_num_range(char *element)
 {
 	long long num;
@@ -60,6 +47,26 @@ long long	check_num_range(char *element)
 		return (3000000000);
 	else
 		return (num);
+}
+
+int	check_duplication(int *element)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (element[i + 1])
+	{
+		j = 0;
+		while (element[j])
+		{
+			if (element[i] == element[j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
 
 void			print_error()

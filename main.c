@@ -17,6 +17,10 @@ static void	check_arg(int size, char **arg, int **temp)
 		i++;
 	}
 	*temp = num;
+	i = -1;
+	while (++i < size)
+		if (!check_duplication(temp[i]))
+			print_error();
 }
 
 int	main(int argc, char *argv[])
@@ -38,8 +42,13 @@ int	main(int argc, char *argv[])
 		check_arg(count_element(temp), temp, &temp_stack);
 		put_element(a, count_element(temp), temp_stack);
 
-		printf("head : %d\n", a->head->value);
-		printf("tail : %d\n", a->head->prev->value);
+		printf("top : %d\n", a->top->value);
+		printf("bottom : %d\n", a->top->prev->value);
+		pop_node(a);
+				//printf("top : %p\n", a->top);
+		printf("top : %d\n", a->top->value);
+		printf("bottom : %d\n", a->top->prev->value);
+
 
 	}
 	if (argc > 2)
@@ -47,8 +56,13 @@ int	main(int argc, char *argv[])
 		check_arg(argc - 1, argv + 1, &temp_stack);	
 		put_element(a, argc - 1, temp_stack);
 
-		printf("head : %d\n", a->head->value);
-		printf("tail : %d\n", a->head->prev->value);
+		printf("top : %d\n", a->top->value);
+		printf("bottom : %d\n", a->top->prev->value);
+		pop_node(a);
+				//printf("top : %p\n", a->top);
+
+		printf("top : %d\n", a->top->value);
+		printf("bottom : %d\n", a->top->prev->value);
 	
 		
 
