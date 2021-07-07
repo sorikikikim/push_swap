@@ -17,10 +17,10 @@ static void	check_arg(int size, char **arg, int **temp)
 		i++;
 	}
 	*temp = num;
-	i = -1;
-	while (++i < size)
-		if (!check_duplication(temp[i]))
-			print_error();
+	//i = -1;
+	//while (++i < size)
+	//	if (!check_duplication(temp[i]))
+	//		print_error();
 }
 
 int	main(int argc, char *argv[])
@@ -49,6 +49,8 @@ int	main(int argc, char *argv[])
 		printf("top : %d\n", a->top->value);
 		printf("bottom : %d\n", a->top->prev->value);
 
+		printf("top : %d\n", b->top->value);
+	
 
 	}
 	if (argc > 2)
