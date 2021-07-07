@@ -33,17 +33,6 @@ int	count_element(char **element)
 	return (i);
 }
 
-void	free_recur(char **argv)
-{
-	int	i = 0;
-	while (argv[i])
-	{
-		free(argv[i]);
-		i++;
-	}
-	free(argv);
-}
-
 char	*ft_concat(char *s1, char *s2)
 {
 	char	*ret;
@@ -52,4 +41,17 @@ char	*ft_concat(char *s1, char *s2)
 	free(s1);
 	free(s2);
 	return (ret);
+}
+
+void	free_recur(char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i])
+	{
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
 }

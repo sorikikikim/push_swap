@@ -27,10 +27,23 @@ long long	check_num_range(char *element);
 int			check_duplication(int size, int *element);
 long long	ft_atoi_ll(const char *str);
 int			count_element(char **element);
-
+char		*ft_concat(char *s1, char *s2);
 t_node		*create_node(int data);
-void		pop_node(t_stack *stack);
-void		append_node(t_stack *stack, t_node *new_node);
 t_stack		*put_element(t_stack *stack, int size, int *temp);
 t_stack		*init_stack(void);
+
+void	push_node(t_stack *stack, int data);
+int		pop_node(t_stack *stack);
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
+
 #endif
