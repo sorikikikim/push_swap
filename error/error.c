@@ -1,9 +1,9 @@
 #include "push_swap.h"
 
-int			check_valid_num(char *element)
+int	check_valid_num(char *element)
 {
-	int i;
-	int flag;
+	int	i;
+	int	flag;
 
 	i = 0;
 	flag = 0;
@@ -12,16 +12,16 @@ int			check_valid_num(char *element)
 	while (element[i])
 	{
 		if (!(element[i] > 47 && element[i] < 58))
-			return (0);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
-int			check_valid_digit(char *element)
+int	check_valid_digit(char *element)
 {
-	int digit;
-	int i;
+	int	digit;
+	int	i;
 
 	i = 0;
 	digit = 0;
@@ -40,36 +40,36 @@ int			check_valid_digit(char *element)
 
 long long	check_num_range(char *element)
 {
-	long long num;
+	long long	num;
 
 	num = ft_atoi_ll(element);
-	if ((num < (long long)-2147483648) || (num > (long long)2147483647))
+	if ((num < (long long) -2147483648) || (num > (long long)2147483647))
 		return (3000000000);
 	else
 		return (num);
 }
 
-int	check_duplication(int *element)
+int	check_duplication(int size, int *element)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (element[i + 1])
+	while (i < size - 1)
 	{
-		j = 0;
-		while (element[j])
+		j = i + 1;
+		while (j < size)
 		{
 			if (element[i] == element[j])
-				return (0);
+				return (1);
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
-void			print_error()
+void	print_error(void)
 {
 	ft_putstr_fd("Error\n", 1);
 	exit(1);

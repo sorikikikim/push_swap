@@ -2,7 +2,7 @@
 
 t_stack	*init_stack(void)
 {
-	t_stack *stack;
+	t_stack	*stack;
 
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack)
@@ -14,7 +14,7 @@ t_stack	*init_stack(void)
 
 t_node	*create_node(int data)
 {
-	t_node *new_node;
+	t_node	*new_node;
 
 	new_node = (t_node *)malloc(sizeof(t_node));
 	if (!new_node)
@@ -27,7 +27,8 @@ t_node	*create_node(int data)
 
 void	pop_node(t_stack *stack)
 {
-	t_node *temp;
+	t_node	*temp;
+
 	if (stack->size == 0)
 		print_error();
 	else if (stack->size == 1)
@@ -68,10 +69,10 @@ void	append_node(t_stack *stack, t_node *new_node)
 	}
 }
 
-t_stack *put_element(t_stack *stack, int size, int *temp)
+t_stack	*put_element(t_stack *stack, int size, int *temp)
 {
-	t_node *new_node;
-	int	i;
+	t_node	*new_node;
+	int		i;
 
 	i = 0;
 	while (i < size)

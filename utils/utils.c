@@ -2,8 +2,8 @@
 
 long long	ft_atoi_ll(const char *str)
 {
-	size_t			i;
-	int				minus;
+	size_t				i;
+	int					minus;
 	unsigned long long	result;
 
 	i = 0;
@@ -23,10 +23,9 @@ long long	ft_atoi_ll(const char *str)
 	return ((long long)result * minus);
 }
 
-
-int			count_element(char **element)
+int	count_element(char **element)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (element[i])
