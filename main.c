@@ -70,11 +70,11 @@ int	main(int argc, char *argv[])
 		printf("top : %d\n", a->top->value);
 		//printf("next : %d\n", a->top->next->value);
 		printf("bottom : %d\n", a->top->prev->value);
-		rra(a);
+		//rra(a);
 		//pb(a, b);
-		printf("top : %d\n", a->top->value);
+		//printf("top : %d\n", a->top->value);
 		//printf("next : %d\n", a->top->next->value);
-		printf("bottom : %d\n", a->top->prev->value);
+		//printf("bottom : %d\n", a->top->prev->value);
 	}
 }
 

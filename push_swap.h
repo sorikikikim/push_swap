@@ -32,18 +32,27 @@ t_node		*create_node(int data);
 t_stack		*put_element(t_stack *stack, int size, int *temp);
 t_stack		*init_stack(void);
 
-void	push_node(t_stack *stack, int data);
-int		pop_node(t_stack *stack);
-void	sa(t_stack *a);
-void	sb(t_stack *b);
-void	ss(t_stack *a, t_stack *b);
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *a, t_stack *b);
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	rr(t_stack *a, t_stack *b);
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
-void	rrr(t_stack *a, t_stack *b);
+void		push_node(t_stack *stack, int data);
+int			pop_node(t_stack *stack);
+void		sa(t_stack *a);
+void		sb(t_stack *b);
+void		swap_a(t_stack *a);
+void		swap_b(t_stack *b);
+void		ss(t_stack *a, t_stack *b);
+void		pa(t_stack *a, t_stack *b);
+void		pb(t_stack *a, t_stack *b);
+void		ra(t_stack *a);
+void		rb(t_stack *b);
+void		rotate_a(t_stack *a);
+void		rotate_b(t_stack *b);
+void		rr(t_stack *a, t_stack *b);
+void		rra(t_stack *a);
+void		rrb(t_stack *b);
+void		reverse_rotate_a(t_stack *a);
+void		reverse_rotate_b(t_stack *b);
+void		rrr(t_stack *a, t_stack *b);
+
+
+
 
 #endif
