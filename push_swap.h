@@ -31,6 +31,8 @@ char		*ft_concat(char *s1, char *s2);
 t_node		*create_node(int data);
 t_stack		*put_element(t_stack *stack, int size, int *temp);
 t_stack		*init_stack(void);
+void		sort_three_args(t_stack *a);
+void		sort_five_args(t_stack *a, t_stack *b);
 
 void		push_node(t_stack *stack, int data);
 int			pop_node(t_stack *stack);
