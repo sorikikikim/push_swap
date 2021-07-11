@@ -30,7 +30,7 @@ void	push_node(t_stack *stack, int data)
 int	pop_node(t_stack *stack)
 {
 	t_node	*temp;
-	int 	pop;
+	int		pop;
 
 	pop = 0;
 	if (stack->size == 0)

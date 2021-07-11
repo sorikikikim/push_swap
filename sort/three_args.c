@@ -2,9 +2,9 @@
 
 void	sort_three_args(t_stack *a)
 {
-	int top;
-	int mid;
-	int bottom;
+	int	top;
+	int	mid;
+	int	bottom;
 
 	top = a->top->value;
 	mid = a->top->next->value;

@@ -2,8 +2,8 @@
 
 void	swap_a(t_stack *a)
 {
-	int up;
-	int down;
+	int	up;
+	int	down;
 
 	up = pop_node(a);
 	down = pop_node(a);
@@ -19,8 +19,8 @@ void	sa(t_stack *a)
 
 void	swap_b(t_stack *b)
 {
-	int up;
-	int down;
+	int	up;
+	int	down;
 
 	up = pop_node(b);
 	down = pop_node(b);
