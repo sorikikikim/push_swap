@@ -1,61 +1,75 @@
 #include "push_swap.h"
 
-static void	up_2_down_2(t_stack *a, t_stack *b)
+static void	find_min(t_stack *a)
 {
-	ra(a);
-	ra(a);
-	pa(a, b);
-	rra(a);
-	rra(a);
+	if (a->top->next->value < a->top->value
+	&& a->top->next->value < a->top->next->next->value)
+		ra(a);
+	else if (a->top->next->next->value < a->top->next->value
+	&& a->top->next->next->value < a->top->prev->prev->value)
+	{
+		ra(a);
+		ra(a);
+	}
+	else if (a->top->prev->prev->value < a->top->next->next->value
+	&& a->top->prev->prev->value < a->top->prev->value)
+	{
+		rra(a);
+		rra(a);
+	}
+	else if (a->top->prev->value < a->top->prev->prev->value
+	&& a->top->prev->value < a->top->value)
+		rra(a);
 }
 
 static void	is_two_args_in_b(t_stack *a, t_stack *b)
 {
-	if (b->top->value < a->top->value)
+	int input;
+
+	input = b->top->value;
+	if (input < a->top->value)
 		pa(a, b);
-	else if (b->top->value > a->top->value
-	&& b->top->value < a->top->next->value)
+	else if (input > a->top->value
+	&& input < a->top->next->value)
 	{
 		ra(a);
 		pa(a, b);
+	}
+	else if (input > a->top->next->value
+	&& input < a->top->prev->value)
+	{
 		rra(a);
-	}
-	else if (b->top->value > a->top->next->value
-	&& b->top->value < a->top->prev->value)
-		up_2_down_2(a, b);
-	else if (b->top->value > a->top->prev->value)
-	{
 		pa(a, b);
-		ra(a);
 	}
+	else if (input > a->top->prev->value)
+		pa(a, b);
 }
 
 static void	is_one_args_in_b(t_stack *a, t_stack *b)
 {
 	if (b->top->value < a->top->value)
 		pa(a, b);
-	else if (b->top->value > a->top->value
-	&& b->top->value < a->top->next->value)
+	else if (b->top->value < a->top->next->value)
 	{
 		ra(a);
-		rra(a);
+		pa(a, b);
 	}
-	else if (b->top->value > a->top->next->value
-	&& b->top->value < a->top->next->next->value)
-		up_2_down_2(a, b);
-	else if (b->top->value > a->top->next->next->value
-	&& b->top->value < a->top->prev->value)
+	else if (b->top->value < a->top->next->next->value)
+	{
+		ra(a);
+		ra(a);
+		pa(a, b);
+	}
+	else if (b->top->value < a->top->prev->value)
 	{
 		rra(a);
 		pa(a, b);
-		ra(a);
-		ra(a);
 	}
 	else if (b->top->value > a->top->prev->value)
 	{
 		pa(a, b);
-		ra(a);
 	}
+	find_min(a);
 }
 
 

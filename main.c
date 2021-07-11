@@ -67,8 +67,10 @@ int	main(int argc, char *argv[])
 		args = format_args(argc, argv);
 		check_arg(count_element(args), args, &temp_stack);
 		put_element(a, count_element(args), temp_stack);
-		printf("top : %d\n", a->top->value);
-		printf("mid : %d\n", a->top->next->value);
+		printf("top    : %d\n", a->top->value);
+		printf("second : %d\n", a->top->next->value);
+		printf("third  : %d\n", a->top->next->next->value);
+		printf("fourth : %d\n", a->top->prev->prev->value);
 		printf("bottom : %d\n", a->top->prev->value);
 		sort_five_args(a, b);
 		printf("top    : %d\n", a->top->value);
