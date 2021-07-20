@@ -71,6 +71,6 @@ int	check_duplication(int size, int *element)
 
 void	print_error(void)
 {
-	ft_putstr_fd("Error\n", 1);
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }

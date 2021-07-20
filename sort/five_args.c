@@ -47,7 +47,7 @@ static void	sort_in_five(t_stack *a)
 		rra(a);
 }
 
-static void	is_two_args_in_b(t_stack *a, t_stack *b)
+void	is_two_args_in_b(t_stack *a, t_stack *b)
 {
 	int	input;
 
@@ -70,7 +70,7 @@ static void	is_two_args_in_b(t_stack *a, t_stack *b)
 		pa(a, b);
 }
 
-static void	is_one_args_in_b(t_stack *a, t_stack *b)
+void	is_one_args_in_b(t_stack *a, t_stack *b)
 {
 	if (b->top->value > a->top->value
 		&& b->top->value < a->top->next->value)
