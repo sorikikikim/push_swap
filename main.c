@@ -70,13 +70,19 @@ int	main(int argc, char *argv[])
 		printf("top    : %d\n", a->top->value);
 		printf("second : %d\n", a->top->next->value);
 		printf("third  : %d\n", a->top->next->next->value);
-		//printf("fourth : %d\n", a->top->prev->prev->value);
-		printf("bottom : %d\n", a->top->prev->value);
-		sorting(a, b, count_element(args));
+		printf("fourth : %d\n", a->top->next->next->next->value);
+		printf("fifth  : %d\n", a->top->next->next->next->next->value);
+		printf("bottom : %d\n\n", a->top->prev->value);
+		//int	find = find_node(a, 10);
+		//printf("find 3 : %d\n\n", find);
+		quick_sort_2(a, a->top->value, a->top->prev->value);
+		//quick_sort(a->top, a->top->prev, a->top->value, a->top->prev->value);
+		//sorting(a, b, count_element(args));
 		printf("top    : %d\n", a->top->value);
 		printf("second : %d\n", a->top->next->value);
 		printf("third  : %d\n", a->top->next->next->value);
-		//printf("fourth : %d\n", a->top->prev->prev->value);
+		printf("fourth : %d\n", a->top->next->next->next->value);
+		printf("fifth  : %d\n", a->top->next->next->next->next->value);
 		printf("bottom : %d\n", a->top->prev->value);
 	}
 }

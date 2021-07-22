@@ -31,6 +31,7 @@ char		*ft_concat(char *s1, char *s2);
 t_node		*create_node(int data);
 t_stack		*put_element(t_stack *stack, int size, int *temp);
 t_stack		*init_stack(void);
+int			find_node(t_stack *stack, int index);
 void		sorting(t_stack *a, t_stack *b, int args);
 void		is_two_args_in_b(t_stack *a, t_stack *b);
 void		is_one_args_in_b(t_stack *a, t_stack *b);
@@ -58,5 +59,9 @@ void		rrb(t_stack *b);
 void		reverse_rotate_a(t_stack *a);
 void		reverse_rotate_b(t_stack *b);
 void		rrr(t_stack *a, t_stack *b);
+
+
+void swap_node(int *a, int *b);
+void quick_sort_2(t_stack *stack, int left, int right);
 
 #endif
