@@ -8,31 +8,6 @@ int set_chunk_num(int size)
 	return (chunk_num);
 }
 
-void	bubble_sort(int arr[], int arr_size)
-{
-	int temp;
-	int i;
-	int j;
-
-	temp = 0;
-	i = 0;
-	while (i < arr_size - 1)
-	{
-		j = 0;
-		while (j < arr_size - 1 - i)
-		{
-			if (arr[j] > arr[j + 1])
-			{       			
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
-}
-
 int	*set_pivot(int chunk_num, int *arr, int arr_size)
 {
 	int	*pivots;
@@ -57,10 +32,7 @@ void	sort_chunk(t_stack *a, t_stack *b ,int *arr)
 
 	bubble_sort(arr, a->size);
 	pivots = decide_pivot(chunk_num(a->size), arr, a->size);
-	while (!a->size)
-	{
-		
-	}
+
 }
 
 int	max_index(t_stack *b)

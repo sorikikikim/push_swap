@@ -32,14 +32,20 @@ t_node		*create_node(int data);
 t_stack		*put_element(t_stack *stack, int size, int *temp);
 t_stack		*init_stack(void);
 int			find_node(t_stack *stack, int index);
-void	sorting(t_stack *a, t_stack *b, int *arr)
-
+void		sorting(t_stack *a, t_stack *b, int *arr);
 void		is_two_args_in_b(t_stack *a, t_stack *b);
 void		is_one_args_in_b(t_stack *a, t_stack *b);
 void		sort_two_args(t_stack *a);
 void		sort_three_args(t_stack *a);
 void		sort_four_args(t_stack *a, t_stack *b);
 void		sort_five_args(t_stack *a, t_stack *b);
+
+int			set_chunk_num(int size);
+int			*set_pivot(int chunk_num, int *arr, int arr_size);
+int			max_index(t_stack *b);
+void		bubble_sort(int arr[], int arr_size);
+void		sort_chunk(t_stack *a, t_stack *b ,int *arr);
+void		rotate_or_reverse(t_stack *stack, int size, int index);
 
 void		push_node(t_stack *stack, int data);
 int			pop_node(t_stack *stack);
