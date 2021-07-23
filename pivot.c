@@ -93,13 +93,9 @@ void	rotate_or_reverse(t_stack *stack, int size, int index)
 
 	i = -1;
 	if (index <= size/2)
-	{
 		while (++i < index)
 			ra(stack);
-	}
 	else
-	{
 		while (++i < size - index)
 			rra(stack);
-	}
 }
