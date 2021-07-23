@@ -10,41 +10,7 @@ void swap_node(int *a, int *b){
 	*a = *b;
 	*b = tmp;
 }
-void	quick_sort_2(t_stack *stack, int left, int right)
-{
-	int pivot;
-	int i;
-	int j;
-	t_node *left_node;
-	t_node *right_node;
 
-	if (left >= right) //원소가 1개인 경우 그대로 두기
-		return ;
-	pivot = left; //pivot는 첫번째 원소
-	i = left + 1;
-	j = right;
-	left_node = stack->top;
-	right_node = stack->top->prev;
-	while (i <= j) //엇갈릴 때까지 반복
-	{
-		while (i <= right && find_node(stack, i) <= find_node(stack, pivot)) //pivot 값보다 큰 값을 만날 때
-		{
-			i++;
-			left_node = left_node->next;
-		}
-		while (j > left && find_node(stack, j) >= find_node(stack, pivot)) // pivot 값보다 작은 값을 만날 때
-		{
-			j--;
-			right_node = right_node->prev;
-		}
-		if (i > j) //현재 엇갈린 상태면 pivot 값과 교체
-			swap_node(&stack->top->value, &right_node->value);
-		else
-			swap_node(&left_node->value, &right_node->value);
-	}
-	quick_sort_2(stack, left, j - 1);
-	quick_sort_2(stack, j + 1, right);
-}
 
 
 //void quick_sort(t_node *top, t_node *bottom, int left, int right)
