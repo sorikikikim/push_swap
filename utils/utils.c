@@ -55,3 +55,28 @@ void	free_recur(char **argv)
 	}
 	free(argv);
 }
+
+void	bubble_sort(int arr[], int arr_size)
+{
+	int	temp;
+	int	i;
+	int	j;
+
+	temp = 0;
+	i = 0;
+	while (i < arr_size - 1)
+	{
+		j = 0;
+		while (j < arr_size - 1 - i)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+}

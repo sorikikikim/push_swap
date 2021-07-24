@@ -67,7 +67,7 @@ int	main(int argc, char *argv[])
 		args = format_args(argc, argv);
 		check_arg(count_element(args), args, &temp_stack);
 		put_element(a, count_element(args), temp_stack);
-		sorting(a, b, temp_stack);
-
+		if (!is_sorted(a, b))
+			sorting(a, b, temp_stack);
 	}
 }
