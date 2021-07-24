@@ -13,6 +13,6 @@ void	sorting(t_stack *a, t_stack *b, int *arr)
 	else if (a->size < 16)
 		sort_one_chunk(a, b);
 	else
-		sort_chunk(a, b, arr);
+		sort_chunks(a, b, arr);
 	free(arr);
 }

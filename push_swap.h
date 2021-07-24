@@ -3,6 +3,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <math.h>
 # include <stdio.h> //remove
 # include "libft.h"
 
@@ -41,10 +42,10 @@ void		sort_four_args(t_stack *a, t_stack *b);
 void		sort_five_args(t_stack *a, t_stack *b);
 
 int			set_chunk_num(int size);
-int			*set_pivot(int chunk_num, int *arr, int arr_size);
+int			*set_pivot(int chunk_num, int arr_size);
 int			max_index(t_stack *b);
 void		bubble_sort(int arr[], int arr_size);
-void		sort_chunk(t_stack *a, t_stack *b ,int *arr);
+void		sort_chunks(t_stack *a, t_stack *b ,int *arr);
 void		rotate_or_reverse(t_stack *stack, int size, int index);
 
 void		push_node(t_stack *stack, int data);
