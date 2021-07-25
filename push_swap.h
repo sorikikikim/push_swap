@@ -50,7 +50,7 @@ void		bubble_sort(int arr[], int arr_size);
 void		sort_one_chunk(t_stack *a, t_stack *b);
 void		set_chunks_bound(t_stack *a, t_stack *b, int *arr, int *pivots);
 void		sort_chunks(t_stack *a, t_stack *b, int *arr);
-void		rotate_or_reverse(t_stack *stack, int size, int index);
+void		rotate_or_reverse(t_stack *b, int size, int index);
 
 void		push_node(t_stack *stack, int data);
 int			pop_node(t_stack *stack);

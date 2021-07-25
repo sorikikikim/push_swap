@@ -51,15 +51,15 @@ int	max_index(t_stack *b)
 	return (index);
 }
 
-void	rotate_or_reverse(t_stack *stack, int size, int index)
+void	rotate_or_reverse(t_stack *b, int size, int index)
 {
 	int	i;
 
 	i = -1;
 	if (index <= size / 2)
 		while (++i < index)
-			rb(stack);
+			rb(b);
 	else
 		while (++i < size - index)
-			rrb(stack);
+			rrb(b);
 }
