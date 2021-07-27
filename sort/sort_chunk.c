@@ -53,4 +53,5 @@ void	sort_chunks(t_stack *a, t_stack *b, int *arr)
 		rotate_or_reverse(b, b->size, max_index(b));
 		pa(a, b);
 	}
+	free(pivots);
 }

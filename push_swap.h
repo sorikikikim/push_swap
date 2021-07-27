@@ -28,6 +28,7 @@ int			check_duplication(int size, int *element);
 long long	ft_atoi_ll(const char *str);
 int			count_element(char **element);
 char		*ft_concat(char *s1, char *s2);
+void		free_recur(char **argv);
 
 t_node		*create_node(int data);
 t_stack		*put_element(t_stack *stack, int size, int *temp);
